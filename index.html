@@ -12,10 +12,20 @@
     <!-- <div class="app">
         <button onclick="mostraAlerta()">Me pressione</button>
         <button onmouseover="mostraAlerta()">Passe o mouse aqui</button>
-        <input type="text" onkeyup="mostraAlerta()" />
+        <input type="text" onkeyup="mostraAlerta()">
     </div> -->
 
     <!-- <script src="./index.js"></script> -->
+    <div class="app">
+        <input type="text" name="nome">
+        <button class="botao">Adicionar</button>
+    </div>
+
+    <script>
+        var inputElement = document.querySelector('input[name=nome]');
+
+        console.log(inputElement);
+    </script>
 </body>
 
 </html>

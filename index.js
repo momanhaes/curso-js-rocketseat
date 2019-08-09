@@ -129,7 +129,20 @@
 
 // setTimeout(exibeAlgo, 5000);
 
-// AULA 10
-function mostraAlerta() {
-    alert('Interação com o botão');
-}
+// Módulo 2 - Aula 01
+// function mostraAlerta() {
+//     alert('Interação com o botão');
+// }
+
+// var inputElement = document.getElementById('idNome');
+
+// Sempre retorna um vetor / Podemos setar quem queremos retornar.
+// var inputElement = document.getElementsByTagName('input')[0];
+
+// var inputElement = document.getElementsByClassName('cNome')[0];
+
+// console.log(inputElement);
+
+var inputElement = document.querySelector('div#app input');
+
+console.log(inputElement);
