@@ -34,8 +34,6 @@ botao.onclick = function () {
 
     divBotao.appendChild(divCaixa);
 }
-//Fim Exercício 1 e 2
-
 
 function gerarCorAleatoria() {
     var caracteres = "0123456789ABCDEF";
@@ -45,6 +43,8 @@ function gerarCorAleatoria() {
     }
     return cor;
 }
+
+//Fim Exercício 1 e 2
 
 //Exercício 3
 var divLista = document.querySelector('#divLista');
@@ -62,7 +62,7 @@ for (nome of nomes) {
 }
 //Fim Exercício 3
 
-//Exercício 4
+// Exercício 4
 var inputNome = document.createElement('input');
 inputNome.setAttribute('type', 'text');
 inputNome.setAttribute('id', 'idNome');
@@ -88,6 +88,26 @@ botaoNome.onclick = function () {
     divLista.appendChild(listaNomes);
     inputNome.value = "";
 }
-//Fim Exercício 4
+
+// Gabarito
+
+// var nomes = ['Diego', 'Gabriel', 'Lucas'];
+// var listElement = document.querySelector('ul');
+// var inputElement = document.querySelector('input');
+// function addItem(text) {
+//     var liElement = document.createElement('li');
+//     var textElement = document.createTextNode(text);
+//     liElement.appendChild(textElement);
+//     listElement.appendChild(liElement);
+// }
+// function adicionar() {
+//     addItem(inputElement.value);
+//     inputElement.value = "";
+// }
+// for (nome of nomes) {
+//     addItem(nome);
+// }
+
+// //Fim Exercício 4
 
 
