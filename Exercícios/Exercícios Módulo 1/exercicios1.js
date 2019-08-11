@@ -103,15 +103,22 @@
 // experiencia(anosEstudo);
 // //Fim Exercício 4
 
-// //Exercício 5
+// Exercício 5
+// function exibeHabilidades(usuarios) {
+//     for (usuario of usuarios) {
+//         console.log(
+//             "O " +
+//             usuario.nome +
+//             " possui as habilidades: " +
+//             usuario.habilidades.join(", ")
+//         );
+//     }
+// }
+
 function exibeHabilidades(usuarios) {
+
     for (usuario of usuarios) {
-        console.log(
-            "O " +
-            usuario.nome +
-            " possui as habilidades: " +
-            usuario.habilidades.join(", ")
-        );
+        console.log(`O ${usuario.nome} possui as habilidades: ${usuario.habilidades.join(", ")}`);
     }
 }
 
@@ -127,7 +134,6 @@ var usuarios = [
 ];
 
 exibeHabilidades(usuarios);
-// }
 
 //O Diego possui as habilidades: Javascript, ReactJS, Redux
 //O Gabriel possui as habilidades: VueJS, Ruby on Rails, Elixir

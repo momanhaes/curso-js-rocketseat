@@ -142,7 +142,46 @@
 // var inputElement = document.getElementsByClassName('cNome')[0];
 
 // console.log(inputElement);
+//Em classe usamos . e id usamos #
+// var inputElement = document.getElementsByTagName('input');
+// var inputElement = document.getElementsByClassName('nome');
+// var inputElement = document.querySelector('div#app input');
+// var inputElement = document.querySelector('input[name=nome]');
+// var inputElement = document.querySelector('input[name=nome]');
 
-var inputElement = document.querySelector('div#app input');
+// var inputElement = document.querySelector('input[name=nome]');
 
-console.log(inputElement);
+// var btnElement = document.querySelector('button.botao');
+// // console.log(btnElement);
+
+// btnElement.onclick = function () {
+//     var text = inputElement.value;
+//     alert(text);
+// }
+
+// // Módulo 2 - Aula 02
+
+// var linkElement = document.createElement('a');
+
+// linkElement.setAttribute('href', 'http://www.google.com.br');
+// linkElement.setAttribute('target', '_blank');
+// linkElement.setAttribute('title', 'Site do Google');
+
+// var textElement = document.createTextNode('Acessar Google');
+
+// linkElement.appendChild(textElement);
+
+// var containerElement = document.querySelector('#app');
+
+// containerElement.appendChild(linkElement);
+
+// var inputElement = document.querySelector('#nome');
+// containerElement.removeChild(inputElement);
+
+// // Módulo 2 - Aula 03
+// var boxElement = document.querySelector('div.box');
+// boxElement.style.width = '100px';
+// boxElement.style.height = '100px';
+// boxElement.style.backgroundColor = '#f00';
+
+
