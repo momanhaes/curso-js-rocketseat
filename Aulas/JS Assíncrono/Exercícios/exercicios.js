@@ -36,7 +36,7 @@ btnBuscar.setAttribute('onclick', 'buscarRepositorio()');
 var textoBotao = document.createTextNode('Buscar Repositórios');
 btnBuscar.appendChild(textoBotao);
 btnBuscar.style.marginLeft = '5px';
- 
+
 divExercicios.appendChild(inputNome);
 divExercicios.appendChild(btnBuscar);
 
@@ -44,14 +44,14 @@ var valorNome = inputNome.value;
 
 btnBuscar.onclick = buscarRepositorio;
 
-function buscarRepositorio(valorNome) {
-    axios.get(`https://api.github.com/users/${valorNome}`)
-    .then(function(response) {
-        console.log(response);
-    })
-    .catch(function(error) {
-        console.warn(error);
-    })
+function buscarRepositorio() {
+    axios.get(`https://swapi.co/api/people/`)
+        .then(function (response) {
+            console.log(response.data.results[0].name);
+        })
+        .catch(function (error) {
+            console.warn(error);
+        })
 }
 
 // //Fim Exercício 2
