@@ -1,41 +1,41 @@
-// // Requisições AJAX
-// var xhr = new XMLHttpRequest();
+// Requisições AJAX
+var xhr = new XMLHttpRequest();
 
-// xhr.open('GET', 'https://api.github.com/users/momanhaes');
-// xhr.send(null);
+xhr.open('GET', 'https://api.github.com/users/momanhaes');
+xhr.send(null);
 
-// //onreadystatechange é executada toda vez que o atributo readyState é modificado.
-// xhr.onreadystatechange = function() {
-//     if (xhr.readyState === 4) {
-//         console.log(JSON.parse(xhr.responseText));
-//     }
-// }
+//onreadystatechange é executada toda vez que o atributo readyState é modificado.
+xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+        console.log(JSON.parse(xhr.responseText));
+    }
+}
 
-// // Promises
+// Promises
 
-// var minhaPromise = function () {
-//     return new Promise(function (resolve, reject) {
-//         var xhr = new XMLHttpRequest();
-//         xhr.open('GET', 'https://api.github.com/users/momanhaes');
-//         xhr.send(null);
+var minhaPromise = function () {
+    return new Promise(function (resolve, reject) {
+        var xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.github.com/users/momanhaes');
+        xhr.send(null);
 
-//         xhr.onreadystatechange = function () {
-//             if (xhr.readyState === 4) {
-//                 if (xhr.status === 200) {
-//                     resolve(JSON.parse(xhr.responseText));
-//                 }
-//                 else {
-//                     reject('Erro na requisição');
-//                 }
-//             }
-//         }
-//     });
-// }
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState === 4) {
+                if (xhr.status === 200) {
+                    resolve(JSON.parse(xhr.responseText));
+                }
+                else {
+                    reject('Erro na requisição');
+                }
+            }
+        }
+    });
+}
 
-// var resultado = minhaPromise();
-// console.log(resultado);
+var resultado = minhaPromise();
+console.log(resultado);
 
-// minhaPromise()
+minhaPromise()
 
 //Axios
 axios.get('https://api.github.com/users/momanhaes')
