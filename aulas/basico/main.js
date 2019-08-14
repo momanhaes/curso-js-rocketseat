@@ -129,7 +129,7 @@ setInterval(exibeAlgo, 1000);
 
 setTimeout(exibeAlgo, 5000);
 
-Módulo 2 - Aula 01
+// Módulo 2 - Aula 01
 function mostraAlerta() {
     alert('Interação com o botão');
 }
