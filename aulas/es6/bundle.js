@@ -1,107 +1,122 @@
 "use strict";
 
-function _typeof(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
-
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
-
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
-
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
-
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
-
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
-
-//Classes
-var List =
-/*#__PURE__*/
-function () {
-  function List() {
-    _classCallCheck(this, List);
-
-    this.data = [];
+// //Classes
+// class List {
+//     constructor() {
+//         this.data = [];
+//     }
+//     add(data) {
+//         this.data.push(data);
+//         console.log(this.data);
+//     }
+// }
+// //Herança
+// class TodoList extends List {
+//     // constructor() {
+//     //     this.todos = [];
+//     // }
+//     // addTodo() {
+//     //     this.todos.push('Novo todo');
+//     //     console.log(this.todos);
+//     // }
+//     constructor() {
+//         super();
+//         this.usuario = 'Matheus';
+//     }
+//     mostraUsuario() {
+//         console.log(this.usuario);
+//     }
+// }
+// //Instanciação de classe
+// const MinhaLista = new TodoList();
+// document.getElementById('novotodo').onclick = function () {
+//     MinhaLista.add('Novo todo');
+// }
+// MinhaLista.mostraUsuario();
+// //Classes com métodos estáticos
+// class Matematica {
+//     static soma(a, b) {
+//         return a + b;
+//     }
+// }
+// console.log(Matematica.soma(1, 2));
+// //Var, const e let
+//Mutação e reatribuição
+// const a = 1;
+// const usuarios = {
+//     nome: 'Fulano'
+// };
+// usuarios.nome = 'Matheus';
+// console.log(usuarios);
+// function teste(x) {
+//     let y = 2;
+//     if (x > 5) {
+//         console.log(x, y);
+//     }
+// }
+// teste(10);
+//Operações em Array
+//Map - Alterar valores no array
+// const lista = [1, 3, 4, 5, 8, 9];
+// const novaLista = lista.map(function (item, index, array) {
+//     return item * 2;
+//     // return index;
+//     // return array;
+// });
+// console.log(novaLista);
+// //Reduce - Esta função serve para reduzirmos o conteúdo de um Array para apenas um elemento.
+// // O exemplo mais clássico é somar todos os valores de um Array.
+// const soma = lista.reduce(function (total, next) {
+//     return total + next;
+// });
+// console.log(soma);
+// //Filter - Como o próprio nome indica, serve para filtrarmos os elementos de um Array. 
+// //Passamos para ele uma função. Se essa função retornar true, o elemento será inserido no novo Array que será criado. 
+// //Se a função retornar false, o elemento será ignorado.
+// const filtro = lista.filter(function(item){
+//     return item % 2 === 0;
+// });
+// console.log(filtro);
+//Find - Procura um item dentro do array
+// const procurar = lista.find(function(item) {
+//     return item === 4;
+// });
+// console.log(procurar);
+// //Arrow functions
+// const arr = [1, 3, 4, 5, 6];
+// const newArr = arr.map(item => item * 2);
+// console.log(newArr);
+// const teste = () => ({ nome: 'Matheus' });
+// console.log(teste());
+// const newArr = arr.map((item) => {
+//     return item * 2;
+// });
+// //Valores padrão
+// const soma = (a = 3, b = 6) => a + b;
+// console.log(soma(1));
+// console.log(soma());
+//Desestruturação de objetos
+var usuario = {
+  nome: 'Matheus',
+  idade: 23,
+  endereco: {
+    cidade: 'Magé',
+    estado: 'Rio de Janeiro'
   }
-
-  _createClass(List, [{
-    key: "add",
-    value: function add(data) {
-      this.data.push(data);
-      console.log(this.data);
-    }
-  }]);
-
-  return List;
-}(); //Herança
-
-
-var TodoList =
-/*#__PURE__*/
-function (_List) {
-  _inherits(TodoList, _List);
-
-  // constructor() {
-  //     this.todos = [];
-  // }
-  // addTodo() {
-  //     this.todos.push('Novo todo');
-  //     console.log(this.todos);
-  // }
-  function TodoList() {
-    var _this;
-
-    _classCallCheck(this, TodoList);
-
-    _this = _possibleConstructorReturn(this, _getPrototypeOf(TodoList).call(this));
-    _this.usuario = 'Matheus';
-    return _this;
-  }
-
-  _createClass(TodoList, [{
-    key: "mostraUsuario",
-    value: function mostraUsuario() {
-      console.log(this.usuario);
-    }
-  }]);
-
-  return TodoList;
-}(List); //Instanciação de classe
-
-
-var MinhaLista = new TodoList();
-
-document.getElementById('novotodo').onclick = function () {
-  MinhaLista.add('Novo todo');
 };
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome, idade, cidade);
 
-MinhaLista.mostraUsuario(); //Classes com métodos estáticos
+function mostraNome(usuario) {
+  console.log(usuario.nome);
+}
 
-var Matematica =
-/*#__PURE__*/
-function () {
-  function Matematica() {
-    _classCallCheck(this, Matematica);
-  }
+function mostrarNome(_ref) {
+  var nome = _ref.nome;
+  console.log(nome);
+}
 
-  _createClass(Matematica, null, [{
-    key: "soma",
-    value: function soma(a, b) {
-      return a + b;
-    }
-  }]);
-
-  return Matematica;
-}();
-
-console.log(Matematica.soma(1, 2)); //Var, const e let
-
-var a = 1;
-var usuarios = {
-  nome: 'Fulano'
-};
-usuarios.nome = 'Matheus';
+mostraNome(usuario);
+mostrarNome(usuario);
