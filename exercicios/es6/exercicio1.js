@@ -7,8 +7,33 @@
 // Agora com suas classes formatadas, adicione um método na classe Usuario chamado isAdmin que
 // retorna se o usuário é administrador ou não baseado na propriedade admin ser true ou não.
 
-// const User1 = new Usuario('email@teste.com', 'senha123');
-// const Adm1 = new Admin('email@teste.com', 'senha123');
-// console.log(User1.isAdmin()) // false
-// console.log(Adm1.isAdmin()) // true
+class Usuario {
+    constructor(email, senha) {
+        this.email = email;
+        this.senha = senha;
+    }
+
+    isAdmin() {
+        if (this.admin === true)
+            return true;
+        // return this.admin === true;
+    }
+
+}
+
+class Admin extends Usuario {
+    constructor(email, senha) {
+        super(email, senha);
+
+        this.admin = true;
+    }
+}
+
+const usuario1 = new Usuario('email@teste.com', 'senha123');
+const usuario2 = new Admin('email@teste.com', 'senha123');
+
+console.log(usuario1.isAdmin());
+console.log(usuario2.isAdmin());
+
+
 
