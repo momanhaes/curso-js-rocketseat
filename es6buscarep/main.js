@@ -18,6 +18,18 @@ class App {
         this.formEl.onsubmit = event => this.addRepository(event);
     }
 
+    // setLoading(loading = true) {
+    //     if (loading == true) {
+    //         let loadingEl = document.createAttribute('span');
+    //         loadingEl.setAttribute('id', 'loading');
+    //         loadingEl.appendChild(document.createTextNode('Carregando'));
+
+    //         this.formEl.appendChild(loadingEl);
+    //     } else {
+    //         document.getElementById('loading').remove();
+    //     }
+    // }
+
     async addRepository(event) {
         event.preventDefault();
 
@@ -26,19 +38,31 @@ class App {
         if (repoInput.length === 0)
             return;
 
-        const response = await axios.get(`https://api.github.com/users/${repoInput}`);
+        // this.setLoading();
 
-        const { name, html_url, avatar_url } = respose.data;
+        try {
+            const response = await axios.get(`https://api.github.com/users/${repoInput}`);
 
-        this.repositories.push({
-            name,
-            avatar_url,
-            html_url,
-        });
+            const {
+                name,
+                html_url,
+                avatar_url
+            } = response.data;
 
-        this.inputEl.value = '';
+            this.repositories.push({
+                name,
+                avatar_url,
+                html_url,
+            });
 
-        this.render();
+            this.inputEl.value = '';
+
+            this.render();
+        } catch (err) {
+            alert('O repositório não existe!');
+        }
+
+        // this.setLoading(false);
     }
 
     render() {
@@ -47,23 +71,25 @@ class App {
         this.repositories.forEach(repo => {
             let imgEl = document.createElement('img');
             imgEl.setAttribute('src', repo.avatar_url);
+            imgEl.style.marginBottom = '10px';
 
             let titleEl = document.createElement('strong');
             titleEl.appendChild(document.createTextNode(repo.name));
 
-            let descriptionEl = document.createElement('p');
-            descriptionEl.appendChild(document.createTextNode(repo.description));
+            // let descriptionEl = document.createElement('p');
+            // descriptionEl.appendChild(document.createTextNode(repo.description));
 
             let linkEl = document.createElement('a');
             linkEl.setAttribute('target', '_blank');
             linkEl.setAttribute('href', repo.html_url);
             linkEl.appendChild(document.createTextNode('Acessar'));
+            linkEl.style.marginLeft = '10px';
 
             let listItemEl = document.createElement('li');
 
             listItemEl.appendChild(imgEl);
             listItemEl.appendChild(titleEl);
-            listItemEl.appendChild(descriptionEl);
+            // listItemEl.appendChild(descriptionEl);
             listItemEl.appendChild(linkEl);
 
             this.listEl.appendChild(listItemEl);
@@ -74,4 +100,3 @@ class App {
 }
 
 new App();
-
