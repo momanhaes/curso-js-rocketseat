@@ -231,7 +231,7 @@ const minhaPromise = () => new Promise((resolve, reject) => {
     }, 2000);
 });
 
-Promise
+//Promise
 minhaPromise().then(response => {
     console.log(response);
 })
